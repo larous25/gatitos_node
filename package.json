@@ -1,0 +1,11 @@
+{
+  "name": "gatitos",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "~3.4.1",
+    "express.io": "~1.1.13",
+    "swig": "~1.1.0",
+    "connect-redis": "~1.4.5",
+    "underscore": "~1.5.2"
+  }
+}

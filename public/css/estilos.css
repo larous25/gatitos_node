@@ -1,0 +1,61 @@
+@import url(http://fonts.googleapis.com/css?family=The+Girl+Next+Door);
+
+body{
+	background: rgb(159, 134, 190);
+	font-family: 'The Girl Next Door', cursive;
+}
+
+
+#gatos img{
+	animation:10s cats infinite;
+	bottom:13px;
+	left:298px;
+	transition:0.5s;
+}
+
+#gatos img:hover{
+	border-right:5px solid red;	
+	transform:rotate(2,2);
+}
+
+@keyframes cats{
+	0%{transform:translate(0px,0px) scale(1,1);}
+	5%{transform:translate(15px,0px) scale(0.8,0.9);}
+	10%{transform:translate(20px,0px) scale(1,1);}
+	15%{transform:translate(25px,0px) scale(0.8,0.9);}
+	20%{transform:translate(30px,0px) scale(1,1);}
+	25%{transform:translate(35px,0px) scale(0.8,0.9);}
+	30%{transform:translate(40px,0px) scale(1,1);}
+	40%{transform:translate(50px,0px) scale(0.8,0.9);}
+	50%{transform:translate(60px,0px) scale(1,1);}
+	60%{transform:translate(70px,0px) scale(0.8,0.9);}
+	70%{transform:translate(80px,0px) scale(1,1);}
+	80%{transform:translate(90px,0px) scale(0.8,0.9);}
+	90%{transform:translate(60px,0px) scale(1,1);}
+	1000%{transform:translate(0px,0px) scale(0.8,0.9);}
+}
+
+
+#gatos img:first-child{
+  animation: catss ease 20s infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes catss{
+  0% {left:-299px;   top:-202px;    opacity:1;    transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;  }
+  9% {left:-298px;   top:54px;  }
+  19% {    transform:  rotate(1066deg) ;  }
+  20% {    left:-301px;     top:154px;    transform:  rotate(105deg) ;  }
+  30% {   left:-123px;    top:134px;    transform:  rotate(NaNdeg) ;  }
+  36% {    left:57px;    top:150px;    transform:  rotate(1066deg) ;  }
+  42% { transform: translate(210px, 124px);}
+  52% {    left:234px;    top:39px;    transform:  rotate(NaNdeg) ;  }
+  59% {    transform:  translate(226px, -74px) rotate(10789deg) ;  }
+  65% {    left:233px;    top:-197px;  }
+  69% {    transform:  rotate(108372deg) ;  }
+  75% {    left:-23px;    top:-204px;  }
+  79% {    left:-296px;    top:-201px;    transform:  rotate(1deg) scaleX(3) scaleY(3) ;  }
+  83% {    transform:  scaleX(1) scaleY(1) ;  }
+  100% {    left:-296px;    top:-201px;    opacity:1;    transform:  rotate(1deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;  }
+}
+

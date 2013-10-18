@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}app Gatitos{% endblock %}
+
+{% block head %}
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+{% endblock %}
+
+{% block content %}
+	<h2>Bienvenido {{ user }}</h2>	
+	<a href="/log-out">Log_out Gatito</a>
+	<ul id="users">
+	{% for person in users %}
+		<li>{{person}}</li>
+	{% endfor %}
+	</ul>
+
+	<div id="gatos">
+		{% for person in users %}
+			<img src="/img/cat_{{ loop.index }}.png" alt="{{person}}" />
+		{% endfor %}
+	</div>
+{% endblock %}
+
+
+
