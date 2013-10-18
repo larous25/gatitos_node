@@ -51,7 +51,7 @@ var inLoggedIn = function (req, res, next) {
 	}
 
 	next();
-}
+};
 
 
 server.get('/', inLoggedIn, function (req, res) {
@@ -59,7 +59,7 @@ server.get('/', inLoggedIn, function (req, res) {
 });
 
 server.get('/app', function (req, res) {
-	res.render('app', { 
+	res.render('app', {
 		user : req.session.user,
 		users : users,
 	});
