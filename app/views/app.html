@@ -18,8 +18,8 @@
 	</ul>
 
 	<div id="gatos">
-		{% for person in users %}
-			<img src="/img/cat_{{ loop.index }}.png" alt="{{person}}" />
+		{% for num in gatosnum %}
+			<img src="/img/cat_{{ num }}.png" alt="{{num}}"/>
 		{% endfor %}
 	</div>
 {% endblock %}

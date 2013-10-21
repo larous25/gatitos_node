@@ -22,7 +22,8 @@ $(document).ready(function () {
 		//pasa algo al loog imagen gato
 
 		$('#users').append('<li>'+data.username+'</li>');
-		$('#gatos').append('<img src="/img/cat_'+aleatorio()+'.png" alt="'+data.username+'" />');
+		$('#gatos').append('<img src="/img/cat_'+data.num+'.png" alt="'+data.num+'" />');
+
 	});
 
 	io.on('log-out', function(data){
@@ -34,8 +35,9 @@ $(document).ready(function () {
 		});
 
 		$("#gatos img").each(function (i, item){
-			if(item.alt === data.username){
-				$(item).remove();
+			if(item.alt === ''+data.num){				
+				$(item).remove();		
+				console.log('Este es el itmem'+item.alt+'se va por '+data.num);		
 			}
 		});
 		

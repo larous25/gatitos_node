@@ -8,6 +8,7 @@ var server = express();
 server.http().io();
 
 var users = [];
+var gatosnum = [];
 
 //View engine
 server.engine('html', swig.renderFile);
@@ -53,15 +54,23 @@ var inLoggedIn = function (req, res, next) {
 	next();
 };
 
+function aleatorio( ){
+	numPosibilidades = 27 - 1;
+	var aleat = Math.random() * numPosibilidades + 1;
+		aleat = Math.round(aleat);
+	return aleat;
+};
+
 
 server.get('/', inLoggedIn, function (req, res) {
 	res.render('home');
 });
 
-server.get('/app', function (req, res) {
+server.get('/app', isntLoggerIn, function (req, res) {
 	res.render('app', {
 		user : req.session.user,
 		users : users,
+		gatosnum : gatosnum,
 	});
 });
 
@@ -69,8 +78,15 @@ server.post('/log-in', function (req, res){
 	users.push(req.body.username);
 
 	req.session.user = req.body.username;
+	req.session.gatonum = aleatorio();
+
+	gatosnum.push(req.session.gatonum);
+
 	// A todos
-	server.io.broadcast('log-in', {username : req.session.user });
+	server.io.broadcast('log-in', {
+				username : req.session.user,
+				num : req.session.gatonum
+				});
 
 
 	res.redirect('/app');
@@ -78,8 +94,13 @@ server.post('/log-in', function (req, res){
 
 server.get('/log-out', function (req, res){
 	users = _.without(users, req.session.user);
+	gatosnum = _.without(gatosnum, req.session.gatonum);
 
-	server.io.broadcast('log-out', {username : req.session.user});
+	server.io.broadcast('log-out', {
+				username : req.session.user,
+				num : req.session.gatonum
+				});
+
 	req.session.destroy();
 	res.redirect('/');
 });
@@ -87,7 +108,7 @@ server.get('/log-out', function (req, res){
 server.io.route('hello?', function(req){
 	//a un solo usuario
 	req.io.emit('ready', {
-		message : 'server ready to rock!!!'
+		message : 'server ready to rock!!!'+req.session.gatonum
 	});
 });
 
