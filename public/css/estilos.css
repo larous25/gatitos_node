@@ -1,19 +1,30 @@
-@import url(http://fonts.googleapis.com/css?family=The+Girl+Next+Door);
+/*@import url(http://fonts.googleapis.com/css?family=The+Girl+Next+Door);*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800);
 
 body{
 	background: rgb(159, 134, 190);
-	font-family: 'The Girl Next Door', cursive;
+	text-align:  center;
+	font-family: 'Open Sans', sans-serif;
+	/*font-family: 'The Girl Next Door', cursive;*/
 }
-
-
-#gatos img{
+*{
+	margin: 0;
+}
+#users{
+	text-align: left;
+	padding: 20px 10px 20px 10px;
+}
+li{
+	font-size: 18px;
+}
+.lista-gatos img{
 	animation:10s cats infinite;
 	bottom:13px;
 	left:298px;
 	transition:0.5s;
 }
 
-#gatos img:hover{
+.lista-gatos img:hover{
 	border-right:5px solid red;	
 	transform:rotate(2,2);
 }
@@ -36,7 +47,7 @@ body{
 }
 
 
-#gatos img:first-child{
+.lista-gatos img:first-child{
   animation: catss ease 20s infinite;
   transform-origin: 50% 50%;
 }
@@ -58,4 +69,44 @@ body{
   83% {    transform:  scaleX(1) scaleY(1) ;  }
   100% {    left:-296px;    top:-201px;    opacity:1;    transform:  rotate(1deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;  }
 }
+.gatos{
+	padding: 50px 20px;
+	display: inline-block;
+}
+.titulo{
+	font-weight: normal;
+	margin-bottom: 20px;
+	font-size: 50px;
+	color: pink;
+	line-height:  50px;
+}
+.form{
+	text-align: left;
+}
 
+.input{
+	border-radius: 10px;
+	border: 2px solid pink;
+	font-size: 16px;
+	margin-bottom: 10px;
+	outline: 0;
+	padding: 10px;
+	transition:.3s;
+	width: 100%;
+	box-sizing:border-box;
+}
+.input:focus{
+	box-shadow: 0 0 20px pink;
+}
+.submit{
+	background:  black;
+	border-radius: 5px;
+	border:1px solid pink;
+	color: white;
+	cursor: pointer;
+	padding: 10px 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 13px;
+	display: inline-block;
+}

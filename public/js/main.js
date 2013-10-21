@@ -1,12 +1,6 @@
-function aleatorio( ){
-	numPosibilidades = 27 - 1;
-	var aleat = Math.random() * numPosibilidades + 1;
-		aleat = Math.round(aleat);
-	return aleat;
-}
-
 $(document).ready(function () {
 	window.io = io.connect();
+
 
 	io.on('connect', function(socket){
 		console.log('hi');
@@ -18,22 +12,25 @@ $(document).ready(function () {
 		console.log(data);
 	});
 
-	io.on('log-in', function(data){
+	io.on('log-in', function(gato){
 		//pasa algo al loog imagen gato
-
-		$('#users').append('<li>'+data.username+'</li>');
-		$('#gatos').append('<img src="/img/cat_'+aleatorio()+'.png" alt="'+data.username+'" />');
+		// debugger;
+		// console.log(data);
+		$('#users').append('<li>'+gato.nombre+'</li>');
+		$('.lista-gatos').append('<img src="/img/cat_'+gato.imagen+'.png" alt="'+gato.nombre+'" />');
 	});
 
 	io.on('log-out', function(data){
 		//quito imagen gato
+		// console.log(data);
+		// debugger;
 		$("#users li").each(function (i, item){
 			if(item.innerText === data.username){
 				$(item).remove();
 			}
 		});
 
-		$("#gatos img").each(function (i, item){
+		$(".lista-gatos img").each(function (i, item){
 			if(item.alt === data.username){
 				$(item).remove();
 			}

@@ -9,19 +9,22 @@
 {% endblock %}
 
 {% block content %}
-	<h2>Bienvenido {{ user }}</h2>	
-	<a href="/log-out">Log_out Gatito</a>
-	<ul id="users">
-	{% for person in users %}
-		<li>{{person}}</li>
+<div class="gatos">
+	<h2 class="titulo">Bienvenido {{ user }}</h2>	
+	<a href="/log-out" class="submit">Salir</a>
+	<ol id="users">
+	{% for gato in gatos %}
+		<li>{{gato.nombre}}</li>
 	{% endfor %}
-	</ul>
+	</ol>
 
-	<div id="gatos">
-		{% for person in users %}
-			<img src="/img/cat_{{ loop.index }}.png" alt="{{person}}" />
+	<div class="lista-gatos">
+		{% for gato in gatos %}
+			<img src="/img/cat_{{gato.imagen}}.png" alt="{{gato.nombre}}" />
 		{% endfor %}
 	</div>
+
+</div>
 {% endblock %}
 
 

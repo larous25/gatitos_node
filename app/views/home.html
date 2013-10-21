@@ -3,10 +3,13 @@
 {% block title %}Home Gatitos{% endblock %}
 
 {% block content %}
-	<h2>Bienvenido A Node Con Gatitos</h2>
-	<p>Nombre de user_cat</p>
-	<form method="POST" action="/log-in">
-		<input name="username" type="text">
-		<button>Log in</button>
-	</form>	
+	<div class="gatos">
+		<h2 class="titulo">Bienvenido A Node Con Gatitos</h2>
+		<form method="POST" action="/log-in" class="form">
+			<div>
+				<input name="username" type="text" class="input" placeholder="Nombre de tu mascota" required />
+				<input type="submit" value="Entrar" class="submit">
+			</div>
+		</form>	
+	</div>
 {% endblock %}
